@@ -24,11 +24,7 @@ fun LetterCard(letter: Letter) {
             .padding(20.dp, 10.dp)
             .clickable {
                 if (letter.soundId != null) {
-                    val mediaPlayer = MediaPlayer.create(
-                        context,
-                        letter.soundId
-                    )
-                    mediaPlayer.start()
+                    letter.playSound(context)
                 }
             },
         elevation = 10.dp
